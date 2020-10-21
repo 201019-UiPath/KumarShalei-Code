@@ -1,4 +1,5 @@
 using Heroslib;
+using System.Text.RegularExpressions;
 namespace HerosUI.Menus
 {
     /// <summary>
@@ -18,8 +19,11 @@ namespace HerosUI.Menus
 
         public Hero GetHeroDetails(){
             Hero hero = new Hero();
-            System.Console.WriteLine("Enter Hero name: ");
-            hero.Name = System.Console.ReadLine();
+            do{
+                System.Console.WriteLine("Enter Hero name: ");
+                hero.Name = System.Console.ReadLine();
+            } while(Regex.IsMatch(hero.Name, "[\\d]"));
+            
             System.Console.WriteLine("Enter to add a super power: ");
             hero.AddSuperPower(System.Console.ReadLine());
             System.Console.WriteLine("Hero created!"); // use logging software to log this
