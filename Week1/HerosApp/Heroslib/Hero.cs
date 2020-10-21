@@ -45,13 +45,12 @@ namespace Heroslib
         //jagged array
         public int[][] ja = new int[3][]; */
         #endregion
+        //public static List<string> superPowers = new List<string>();
         public static Stack<string> superPowers = new Stack<string>();// LIFO
-
+        // look into double linked lists
         public static Dictionary<string, string> hideOuts = new Dictionary<string,string>();
         ///Method
-        public static IEnumerable<string> GetSuperPowers(){
-            return superPowers;
-        }
+        
 
         public Hero()
         {
@@ -64,6 +63,10 @@ namespace Heroslib
             hideOuts.Add("Batman", "Bat Cave");
             hideOuts.Add("Superman", "Fortress of Solitude");
 
+        }
+
+        public static IEnumerable<string> GetSuperPowers(){
+            return superPowers;
         }
         public void RemoveSuperPower(){//string superPower){
             //if(superPowers.Contains(superPower)){

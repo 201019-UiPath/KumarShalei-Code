@@ -7,7 +7,7 @@ namespace HerosUI
     {
         static void Main(string[] args)
         {
-            Hero obj2 = new Hero();
+            //Hero obj2 = new Hero();
             #region default constructor
             //Hero obj=new Hero();
             //Console.WriteLine($"{obj.Id} {obj.name}");
@@ -60,13 +60,17 @@ namespace HerosUI
                 Console.WriteLine(superPowers);               
             }*/
             #endregion
-
             #region Dictionary<key,value>
-            Console.WriteLine("Hero     Hideout");
-            foreach(var superhero in Hero.hideOuts){
-                //Console.WriteLine($"{superhero.Key} {Hero.hideOuts[superhero.Key]}"); old way
-                Console.WriteLine($"{superhero.Key} {superhero.Value}"); // new way
-            }
+            // Console.WriteLine("Hero     Hideout");
+            // foreach(var superhero in Hero.hideOuts){
+            //     //Console.WriteLine($"{superhero.Key} {Hero.hideOuts[superhero.Key]}"); old way
+            //     Console.WriteLine($"{superhero.Key} {superhero.Value}"); // new way
+            // }
+            #endregion
+
+            #region Calling HeroMenu
+            Menus.IMenu startMenu = new Menus.MainMenu();
+            startMenu.Start();
             #endregion
         }
     }
