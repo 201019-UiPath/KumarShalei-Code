@@ -59,9 +59,9 @@ namespace Heroslib
             superPowers.Push("Invisibility");
             superPowers.Push("Fly");
 
-            hideOuts.Add("Thor", "Asgard");
-            hideOuts.Add("Batman", "Bat Cave");
-            hideOuts.Add("Superman", "Fortress of Solitude");
+            // hideOuts.Add("Thor", "Asgard");
+            // hideOuts.Add("Batman", "Bat Cave");
+            // hideOuts.Add("Superman", "Fortress of Solitude");
 
         }
 
@@ -79,7 +79,7 @@ namespace Heroslib
         public void AddSuperPower(string superPower){
             if(superPower != null && superPower != ""){
                 superPowers.Push(superPower);
-            }
+            } else throw new ArgumentException("Super power shouldn't be null");
         }
     }
 

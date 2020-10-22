@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerosDB", "HerosDB\HerosDB.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerosTest", "HerosTest\HerosTest.csproj", "{6D19CBBC-250F-4E30-BF34-E05AC45BF146}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerosBL", "HerosBL\HerosBL.csproj", "{909FC531-0A08-4959-9566-B1DB69EAD4DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,5 +74,17 @@ Global
 		{6D19CBBC-250F-4E30-BF34-E05AC45BF146}.Release|x64.Build.0 = Release|Any CPU
 		{6D19CBBC-250F-4E30-BF34-E05AC45BF146}.Release|x86.ActiveCfg = Release|Any CPU
 		{6D19CBBC-250F-4E30-BF34-E05AC45BF146}.Release|x86.Build.0 = Release|Any CPU
+		{909FC531-0A08-4959-9566-B1DB69EAD4DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{909FC531-0A08-4959-9566-B1DB69EAD4DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{909FC531-0A08-4959-9566-B1DB69EAD4DC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{909FC531-0A08-4959-9566-B1DB69EAD4DC}.Debug|x64.Build.0 = Debug|Any CPU
+		{909FC531-0A08-4959-9566-B1DB69EAD4DC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{909FC531-0A08-4959-9566-B1DB69EAD4DC}.Debug|x86.Build.0 = Debug|Any CPU
+		{909FC531-0A08-4959-9566-B1DB69EAD4DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{909FC531-0A08-4959-9566-B1DB69EAD4DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{909FC531-0A08-4959-9566-B1DB69EAD4DC}.Release|x64.ActiveCfg = Release|Any CPU
+		{909FC531-0A08-4959-9566-B1DB69EAD4DC}.Release|x64.Build.0 = Release|Any CPU
+		{909FC531-0A08-4959-9566-B1DB69EAD4DC}.Release|x86.ActiveCfg = Release|Any CPU
+		{909FC531-0A08-4959-9566-B1DB69EAD4DC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
