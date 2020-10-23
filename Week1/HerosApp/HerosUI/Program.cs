@@ -71,24 +71,36 @@ namespace HerosUI
             // Menus.IMenu startMenu = new Menus.MainMenu();
             // startMenu.Start();
             #endregion
-            #region Delegate, Anonymous, methods, Lambda
+            
             HeroTasks heroTasks = new HeroTasks();
-            //HeroDel del = new HeroDel(heroTasks.GetPowers);
-            Action del = new Action(heroTasks.GetPowers);
-            //Func<string, string> fd = new Func<string, string>(some method);
-            //Predicate<string> predicate = new Predicate<string>(some method);
-            del += heroTasks.DoWork; // += subscribe to a method
-            del += heroTasks.ManageLife; // -= unsubsribe
-            del();
+            #region Delegate, Anonymous, methods, Lambda
+            
 
-            //Anonymous method
-            Action<string> am=delegate(string name){
-                System.Console.WriteLine("Hello anon");
-            };
-            am("Peggy");
+            //HeroDel del = new HeroDel(heroTasks.GetPowers);
+            // Action del = new Action(heroTasks.GetPowers);
+            // //Func<string, string> fd = new Func<string, string>(some method);
+            // //Predicate<string> predicate = new Predicate<string>(some method);
+            // del += heroTasks.DoWork; // += subscribe to a method
+            // del += heroTasks.ManageLife; // -= unsubsribe
+            // del();
+
+            // //Anonymous method
+            // Action<string> am=delegate(string name){
+            //     System.Console.WriteLine("Hello anon");
+            // };
+            // am("Peggy");
             //lambda expressions - shorthand notation to anon methods
-            Action result = ()=>System.Console.WriteLine("Hello Lambda");
-            result();
+            //Action result = ()=>System.Console.WriteLine("Hello Lambda");
+            //result();
+            #endregion
+            #region Asynchronous vs Synchronous programming, Delegates (cont.)
+            // Subscribing to publisher
+            heroTasks.workDone += EmailService.SendEmail;
+            heroTasks.workDone += TextMessageService.SendText;
+            heroTasks.workDone += PushNotification.SendPush;
+            heroTasks.DoWork();
+            heroTasks.ManageLife();
+            Console.Read(); //Holds the screen until a key pressed
             #endregion
         }
     }
