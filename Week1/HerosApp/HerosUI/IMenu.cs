@@ -1,4 +1,4 @@
-namespace HerosUI.Menus
+namespace HerosUI
 {
     /// <summary>
     /// Basic menu interface

@@ -1,42 +1,51 @@
 using System.Collections.Generic;
-using Heroslib;
-using System.IO;
+using HerosDB.Models;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-
-
+using System.IO;
 namespace HerosDB
 {
-    /// <summary>
-    /// Repository using file
-    /// </summary>
-    public class FileRepo : IRepository
+    public class FileRepo : ISuperHeroRepo, IVillainRepo
     {
-        string filepath = "HerosDB/HerosDataPlace/Heros.txt";
-        /// <summary>
-        /// Adds hero to file
-        /// </summary>
-        /// <param name="hero"></param>
-        public async void AddHeroAsync(Hero hero)
+        private string filename = "HerosDB/Heroes/Heroes.txt";
+        public async void AddAHeroAsync(SuperHero hero)
         {
-            using (FileStream fs = File.Create(filepath)){
+            using (FileStream fs = File.Create(path: filename)){
                 await JsonSerializer.SerializeAsync(fs, hero);
-                System.Console.WriteLine("hero is being written to file");
+                System.Console.WriteLine("Hero being written to file");
             }
+
         }
 
-        /// <summary>
-        /// Gets all heros from data storing place
-        /// </summary>
-        /// <returns></returns>
-        public async Task<List<Hero>> GetAllHerosAsync()
+        public void AddAVillain(SuperVillain superVillain)
         {
-            List<Hero> allHeros = new List<Hero>();
-            using(FileStream fs = File.OpenRead(filepath)){
-                allHeros.Add(await JsonSerializer.DeserializeAsync<Hero>(fs));
+            throw new System.NotImplementedException();
+        }
+
+        public async Task<List<SuperHero>> GetAllHeroesAsync()
+        {
+            List<SuperHero> allHeroes = new List<SuperHero>();
+            using (FileStream fs = File.OpenRead(filename))
+            {
+                allHeroes.Add(await JsonSerializer.DeserializeAsync<SuperHero>(fs));
             }
-            return allHeros;
+            return allHeroes;
+
+        }
+
+        public List<SuperVillain> GetAllVillains()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public SuperHero GetHeroByName(string name)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public SuperVillain GetVillainByName(string name)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -1,11 +1,14 @@
 using System;
 namespace Heroslib
 {
-    /// Subscriber 2
+    /// <summary>
+    /// Subscriber 3
+    /// </summary>
     public class TextMessageService
     {
-        public static void SendText(){//object e, EventArgs args){
-            Console.WriteLine("---------Text Sent--------");
+        public static void  SendText(){
+            //some logic to send text message
+            Console.WriteLine("----------Text Sent-------");
         }
     }
 }

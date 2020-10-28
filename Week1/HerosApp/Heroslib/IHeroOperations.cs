@@ -1,6 +1,6 @@
 namespace Heroslib
 {
-    public interface IHeroOperation
+    public interface IHeroOperations
     {
          void DoWork();
          void ManageLife();

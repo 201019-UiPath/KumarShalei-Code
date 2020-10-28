@@ -1,37 +1,36 @@
+using System;
 using System.Threading.Tasks;
-namespace Heroslib
 
+namespace Heroslib
 {
-    public delegate void HeroDel();
-    public class HeroTasks : IHeroOperation, IHeroSuperPowers
+    public delegate void HeroDel(); 
+    public class HeroTasks : IHeroOperations, IHeroSuperPowers
     {
-        string path = @"C:\Users\shale\Desktop\UiPath_Batch\KumarShalei-Code\Week1\SuperPower.txt";
+        string path=@"HerosLib\SuperPowers.txt";
         public event HeroDel workDone;
-        public async void DoWork()
-        {
-            System.Console.WriteLine("Work Started..........");
-            await Task.Run(new System.Action(GetPowers));
-            System.Console.WriteLine("Saving humanity is my passion");
-            System.Console.WriteLine("Work finished");
-            OnWorkDone();
+        public async void DoWork(){
+            Console.WriteLine("Work Started.....");
+            await Task.Run(new Action(GetPowers));// create a new thread and returns to the main thread whenever finishes the task
+            Console.WriteLine("Saving humanity is my work");
+            Console.WriteLine("Work finished");
+            OnWorkDone();// event call to notify all subscribers
         }
+        /// <summary>
+        /// check if event is binded to the handlers
+        /// </summary>
         public void OnWorkDone(){
-            //workDone?.Invoke();
             if(workDone!=null){
-                workDone();// raising the event
+                workDone();// raising the event 
             }
         }
-        public void GetPowers()
-        {
-            System.Console.WriteLine("Getting Powers");
-            System.Threading.Thread.Sleep(2000);
-            string superPower = System.IO.File.ReadAllText(path);
-            System.Console.WriteLine($"Power obtained {superPower}");
+        public void ManageLife(){
+            Console.WriteLine("I have a cranky partner to manage");
         }
-
-        public void ManageLife()
-        {
-            System.Console.Write("I have a cranky partner to manage");
+        public void GetPowers(){
+            Console.WriteLine("Getting Powers");
+            System.Threading.Thread.Sleep(2000);
+            string superPower=System.IO.File.ReadAllText(path);
+            Console.WriteLine($"Power obtained {superPower}");
         }
     }
 }
